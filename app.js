@@ -28,13 +28,14 @@ server.use(express.json());
 server.get("/donnees", async (req, res) => {
     try {
         console.log(req.headers.authorization);
-        //Ceci sera remplacé par un fetch ou un appel à la base de données
-        // const donnees = require("./data/donneesTest.js");
+     
         console.log(req.query);
         const direction = req.query["order-direction"] || "asc";
-        const limit = +req.query["limit"] || 50; //Mettre une valeur par défaut
+        const limit = +req.query["limit"] || 500; //Mettre une valeur par défaut
 
-        const donneesRef = await db.collection("test").orderBy("user", direction).limit(limit).get();
+      
+    
+        const donneesRef = await db.collection("Films").orderBy("année", direction).limit(limit).get();
         const donneesFinale = [];
 
         donneesRef.forEach((doc) => {
@@ -45,9 +46,10 @@ server.get("/donnees", async (req, res) => {
         res.json(donneesFinale);
     } catch (erreur) {
         res.statusCode = 500;
-        res.json({ message: "Une erreur est survenue. Meilleure chance la prochaine fois" });
+        res.json({ message: "Une erreur est survenue." });
     }
 });
+
 
 /**
  * @method GET
@@ -55,42 +57,70 @@ server.get("/donnees", async (req, res) => {
  * @see url à consulter
  * Permet d'accéder à un utilisateur
  */
-server.get("/donnees/:id", (req, res) => {
-    // console.log(req.params.id);
-    const donnees = require("./data/donneesTest.js");
 
-    const utilisateur = donnees.find((element) => {
-        return element.id == req.params.id;
-    });
 
-    if (utilisateur) {
-        res.statusCode = 200;
-        res.json(utilisateur);
-    } else {
-        res.statusCode = 404;
-        res.json({ message: "Utilisateur non trouvé" });
-    }
-});
+server.get("/donnees/:id", async (req, res) => {
 
-server.post("/donnees", async (req, res) => {
     try {
-        const test = req.body;
+        const id = req.params.id;
+        const doc = await db.collection("Films").doc(id).get();
 
-        //Validation des données
-        if (test.user == undefined) {
-            res.statusCode = 400;
-            return res.json({ message: "Vous devez fournir un utilisateur" });
+        if (!doc.exists) {
+
+            res.status(404).json({ message: "Film non trouvé" });
+            return;
         }
 
-        await db.collection("test").add(test);
+        res.status(200).json(doc.data());
 
-        res.statusCode = 201;
-        res.json({ message: "La donnée a été ajoutée", donnees: test });
     } catch (error) {
-        res.statusCode = 500;
-        res.json({ message: "erreur" });
+
+        res.status(500).json({ message: "Erreur" });
     }
 });
+
+
+//Ajouter un nouveau film
+server.post("/donnees", async (req, res) => {
+    try {
+        const nouveauFilm = req.body;
+       
+        await db.collection("Films").add(nouveauFilm);
+        res.statusCode = 201;
+        res.json({ message: "Le film a été ajouté", film: nouveauFilm });
+    } catch (error) {
+        res.statusCode = 500;
+        res.json({ message: "Une erreur est survenue." });
+        console.log(error);
+
+    }
+});
+
+
+
+
+   
+
+
+//server.post("/donnees", async (req, res) => {
+   // try {
+      //  const test = req.body;
+
+        //Validation des données
+       // if (test.user == undefined) {
+       //     res.statusCode = 400;
+      //      return res.json({ message: "Vous devez fournir un utilisateur" });
+      //  }
+
+    //    await db.collection("").add(test);
+
+      //  res.statusCode = 201;
+      //  res.json({ message: "La donnée a été ajoutée", donnees: test });
+   // } catch (error) {
+    //    res.statusCode = 500;
+   //     res.json({ message: "erreur" });
+   // }
+//});
 
 server.post("/donnees/initialiser", (req, res) => {
     const donneesTest = require("./data/donnees.js");
@@ -111,19 +141,21 @@ server.put("/donnees/:id", async (req, res) => {
     const donneesModifiees = req.body;
     //Validation ici
 
-    await db.collection("test").doc(id).update(donneesModifiees);
+    await db.collection("Films").doc(id).update(donneesModifiees);
 
     res.statusCode = 200;
     res.json({ message: "La donnée a été modifiée" });
 });
 
+
+
 server.delete("/donnees/:id", async (req, res) => {
     const id = req.params.id;
 
-    const resultat = await db.collection("test").doc(id).delete();
+    const resultat = await db.collection("Films").doc(id).delete();
 
     res.statusCode = 200;
-    res.json({ message: "Le document a été supprimé" });
+    res.json({ message: "Le film a été supprimé" });
 });
 
 server.post(

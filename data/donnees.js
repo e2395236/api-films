@@ -218,6 +218,29 @@ const donnees = [
     "genre": "Drame",
     "image": "les-bons-debarras.jpg"
 }
+,
+{
+    "titre": "Alien - Le 8ème passager",
+    "genres": ["Horreur", "Science-fiction"],
+    "description": "",
+    
+    "annee": "1979",
+    "realisation": "Ridley Scott",
+    "titreVignette": "alienle8emepassager.jpg",
+    "commentaires": 
+    
+    [ 
+        { 
+            "auteur": "Simon", 
+            "texte": "Un classique du cinéma d'horreur." 
+        }, 
+        
+        { "auteur": "Maxime",
+          "texte": "J'en fait encore des cauchemars." 
+        } 
+    ]
+    },
+   
 
 
 
