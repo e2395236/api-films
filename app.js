@@ -93,10 +93,10 @@ server.post("/donnees", async (req, res) => {
 });
 
 server.post("/donnees/initialiser", (req, res) => {
-    const donneesTest = require("./data/donneesTest.js");
+    const donneesTest = require("./data/donnees.js");
 
     donneesTest.forEach(async (element) => {
-        await db.collection("test").add(element);
+        await db.collection("Films").add(element);
     });
 
     res.statusCode = 200;
