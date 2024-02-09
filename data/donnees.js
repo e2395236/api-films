@@ -148,6 +148,81 @@ const donnees = [
     "genre": "Drame",
     "image": "bingo.jpg"
 }
+,
+{
+    "titre": "La Gammick",
+    "année": 1974,
+    "realisateur": "Jacques Godbout",
+    "synopsis": "Inspiré d'un fait divers remontant aux années 1950, le film raconte l'histoire de François (Chico) Tremblay, un Québécois moyen ayant appartenu à la pègre locale et qui se retrouve confronté à la toute-puissante mafia américaine. Plus qu'un thriller, le film revêt une signification sociale et idéologique qui permet une lecture à plusieurs niveaux et une analyse sociopolitique d'un phénomène urbain : le gangstérisme québécois.",
+    "acteurs": ["Marc Legault", "Dorothée Berryman", "Gilbert Chénier"],
+    "genre": "Crime, Drame",
+    "image": "la-gammick.jpg"
+}
+,
+{
+    "titre": "La Tête de Normande St-Onge",
+    "année": 1975,
+    "realisateur": "Gilles Carle",
+    "synopsis": "Normande St-Onge habite un immeuble vétuste de trois étages : au rez-de-chaussée loge un artisan, au-dessus c'est elle en compagnie de Bouliane, son ami et au dernier étage, loge une vieille dame alcoolique, sourde et folle, en compagnie de son petit-fils adolescent, Jérémie. Normande poursuit des cours de danse avec l'intention de faire une carrière artistique, travaille comme commis dans une pharmacie pour vivre, supporte financièrement Pierrette, sa sœur qui est asthmatique et plus ou moins droguée, et enfin se débat avec l'asile afin d'en faire sortir sa mère qui y est internée.",
+    "acteurs": ["Carole Laure", "Raymond Cloutier", "Reynald Bouchard", "Renée Girard", "Anne-Marie Ducharme"],
+    "genre": "Drame",
+    "image": "la-tete-de-normande-st-onge.jpg"
+}
+,
+{
+    "titre": "Parlez-nous d'amour",
+    "année": 1976,
+    "realisateur": "Jean-Claude Lord",
+    "synopsis": "Le film dénonce le processus d'aliénation des masses par les émissions de variétés à travers le personnage de Jeannot, un animateur télé qui devient désillusionné par l'industrie télévisuelle et commence à révéler le comportement en coulisses de ses collègues à l'antenne, incluant des allégations d'exploitation sexuelle, de corruption, et des tentatives d'étouffer des scandales de célébrités.",
+    "acteurs": ["Jacques Boulanger", "Benoît Girard", "Claude Michaud", "Anne Létourneau", "Nicole Cloutier", "Véronique Béliveau", "Rita Lafontaine", "Françoise Berd", "Amulette Garneau", "Monique Mercure", "Manda Parent", "Pierre Curzi", "Jacques DesBaillets", "Jacques Famery", "Muriel Dutil", "Diane Guérin", "Yvon Barrette", "Michelle Rossignol", "Gabriel Arcand", "Guy L'Écuyer"],
+    "genre": ["Drame", "Comédie", "Satire"],
+    "image": "parlez-nous-damour.jpg"
+}
+,
+{
+    "titre": "Ti-Mine, Bernie pis la gang...",
+    "année": 1977,
+    "realisateur": "Marcel Carrière",
+    "synopsis": "Ce film comique dramatique centre son histoire sur deux frères, Ti-Mine (Marcel Sabourin) et Bernie (Jean Lapointe), qui élaborent un plan pour s'enrichir rapidement dans l'espoir de déménager leur famille en Floride. Cependant, réaliser leur rêve familial de vivre en Floride ne sera pas aussi simple qu'ils l'avaient prévu.",
+    "acteurs": ["Marcel Sabourin", "Jean Lapointe", "Rita Lafontaine", "Anne-Marie Ducharme", "Raymond Lévesque", "Denise Proulx", "Guy L'Écuyer"],
+    "genre": "Comédie",
+    "image": "ti-mine-bernie-pis-la-gang.jpg"
+}
+,
+{
+    "titre": "Cordélia",
+    "année": 1980,
+    "realisateur": "Jean Beaudin",
+    "synopsis": "Dans un village des années 1890, le film se concentre sur Cordélia Viau (Louise Portal), une femme qui invite des hommes chez elle pendant l'absence de son mari. Cette action offense les villageois conservateurs. L'un des hommes invités est retrouvé mort, et la femme est suspectée et jugée pour son acte immoral plutôt que pour le crime de meurtre qu'elle aurait commis.",
+    "acteurs": ["Louise Portal", "Gaston Lepage", "Raymond Cloutier", "Gilbert Sicotte", "James Blendick", "Pierre Gobeil", "Marcel Sabourin", "Rolland Bédard", "Claude Gauthier", "Jean-Pierre Masson", "Lionel Villeneuve", "Olivette Thibault", "Jean Duceppe", "Jean Gascon", "Gratien Gélinas", "Doris Lussier", "Gilles Vigneault", "Michelle Rossignol"],
+    "genre": "Drame",
+    "image": "cordelia.jpg"
+}
+,
+{
+    "titre": "L'arrache coeur",
+    "année": 1979,
+    "realisateur": "Mireille Dansereau",
+    "synopsis": "Un drame centré sur Céline, une femme qui navigue dans des relations compliquées avec son mari Michel et sa mère Françoise. Le film explore la crise matrimoniale de Céline due à sa relation difficile et complexe avec sa mère, mettant en lumière les défis de communication et les attentes déçues.",
+    "acteurs": ["Louise Marleau", "Françoise Faucher", "Michel Mondie"],
+    "genre": "Drame",
+    "image": "larrache-coeur.jpg"
+}
+,
+{
+    "titre": "Les Bons Débarras",
+    "année": 1980,
+    "realisateur": "Francis Mankiewicz",
+    "synopsis": "Dans une région rurale isolée du Québec, Manon, treize ans, vit avec sa mère Michelle et son oncle Guy, ayant une déficience intellectuelle. Le film explore les dynamiques complexes de la famille, y compris la jalousie et l'obsession de Manon pour l'amour exclusif de sa mère, conduisant à des conséquences tragiques.",
+    "acteurs": ["Charlotte Laurier", "Marie Tifo", "Germain Houde", "Louise Marleau", "Roger Lebel", "Gilbert Sicotte", "Serge Thériault", "Jean Pierre Bergeron"],
+    "genre": "Drame",
+    "image": "les-bons-debarras.jpg"
+}
+
+
+
+
+
 
 
     
