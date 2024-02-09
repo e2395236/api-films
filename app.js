@@ -3,7 +3,9 @@ const dotenv = require("dotenv");
 const fs = require("fs");
 const path = require("path");
 const mustacheExpress = require("mustache-express");
+const bcrypt = require("bcrypt");
 const db = require("./config/db.js");
+const { check, validationResult } = require("express-validator");
 
 //Configurations
 dotenv.config();
