@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,23 +7,56 @@
         <link rel="stylesheet" href="assets/css/styles.css" />
     </head>
     <body>
-        <header>
-            <h1>API Films Québécois</h1>
-        </header>
-        <nav>
-           
-        </nav>
+        <h1>API de Films Québécois</h1>
+        <p>Cette API fournit des informations sur les films québécois.</p>
+    
+        <h2>Utilisation de l'API</h2>
+        <p>Pour utiliser cette API, vous pouvez effectuer des requêtes HTTP GET, PUT, POST et DELETE aux URL suivantes :</p>
+        <ul>
+            <li><code>/api/films</code> - Récupérer la liste de tous les films québécois</li>
+            <li><code>/api/films/{id}</code> - Récupérer un film spécifique en utilisant son identifiant</li>
+            <li><code>/api/films</code> - Ajouter un nouveau film</li>
+            <li><code>/api/films/{id}</code> - Modifier un film spécifique en utilisant son identifiant</li>
+            <li><code>/api/films/{id}</code> - Supprimer un film spécifique en utilisant son identifiant</li>
+        </ul>
+    
+        <h2>Exemple de Requête</h2>
+        <p>Voici un exemple de requête pour récupérer la liste de tous les films :</p>
+        <pre>
+            GET /films
+        </pre>
+    
+        <h2>Exemple de Réponse</h2>
+        <p>La réponse sera au format JSON et ressemblera à ceci :</p>
+        <pre>
+            [
+                    {
+                        "titre": "Mon Oncle Antoine",
+                        "année": 1971,
+                        "realisateur": "Claude Jutras",
+                        "synopsis": "Situé dans une petite ville minière du Québec des années 40, ce film raconte l'histoire d'un adolescent travaillant dans le magasin général de son oncle, qui sert aussi d'entrepreneur de pompes funèbres. À travers ses yeux, on explore les complexités de la vie, de la mort et de l'amour dans cette communauté.",
+                        "acteurs": ["Jacques Gagnon", "Lyne Champagne", "Jean Duceppe", "Olivette Thibault"],
+                        "genre": "Drame",
+                        "image": "mon-oncle-antoine.jpg"
+                
+                    },
+                {
+                    
+                    "titre": "Les Invasions barbares",
+                    "réalisateur": "Denys Arcand",
+                    "année": 2003
+                    "synopsis": "",
+                    "acteurs": [],
+                    "genre": "Drame",
+                    "image": "les-invasions-barbares.jpg"
+                },
+                ...
+            ]
+        </pre>
 
-        <main>
-            <div class="container">
-                <h2>Documentation de l'API</h2>
-              <p>
-                <a href="/films">Films</a>
-              </p>
-
-
-            </div>
-        </main>
+      <footer>
+        <p>© 2024 API Films. Tous droits réservés.</p>
+      </footer>
 
     </body>
-</html>
+    </html>

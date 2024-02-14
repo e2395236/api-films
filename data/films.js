@@ -1,12 +1,23 @@
 const donnees = [
     {
-        "titre": "Le Chat dans le sac",
+        "titre": "Le chat dans le sac",
         "année": 1964,
         "realisateur": "Gilles Groulx",
         "synopsis": "Un jeune journaliste québécois questionne sa relation avec sa petite amie et ses propres convictions politiques dans le contexte du Québec des années 60. Le film mélange fiction et documentaire, explorant les désirs personnels et les luttes sociopolitiques.",
         "acteurs": ["Claude Godbout", "Barbara Ulrich", "Léandre Normand", "Jean-Claude Lord"],
         "genre": "Drame",
         "image": "le-chat-dans-le-sac.jpg"
+         
+    [ 
+        { 
+            "auteur": "Jérome", 
+            "texte": "." 
+        }, 
+        
+        { "auteur": "Mélisane",
+          "texte": "J'en fait encore des cauchemars." 
+        } 
+    ]
     }
     ,
     {
@@ -17,6 +28,17 @@ const donnees = [
         "acteurs": ["Guy L'Écuyer", "Monique Mercure", "Pauline Julien", "Marcel Sabourin"],
         "genre": "Comédie",
         "image": "la-vie-heureuse-de-leopold-z.jpg"
+         
+    [ 
+        { 
+            "auteur": "Carolique", 
+            "texte": "petite trouvaille de noel" 
+        }, 
+        
+        { "auteur": "Josiame",
+          "texte": "Je n'avais jamais vue ce film !" 
+        } 
+    ]
     }
     ,
     {
@@ -27,6 +49,17 @@ const donnees = [
         "acteurs": ["Jean Duceppe", "Geneviève Bujold", "Paul Guèvremont", "François Tassé"],
         "genre": "Drame",
         "image": "montreal-vol-871.jpg"
+         
+    [ 
+        { 
+            "auteur": "Maévane", 
+            "texte": "Magnifique !" 
+        }, 
+        
+        { "auteur": "Paméloppe",
+          "texte": "coup de foudre !" 
+        } 
+    ]
     }
 ,
 {
@@ -37,6 +70,17 @@ const donnees = [
     "acteurs": ["Claude Jutra", "Johanne Harrelle", "Monique Mercure", "Serge Gagné"],
     "genre": "Documentaire",
     "image": "wow.jpg"
+     
+    [ 
+        { 
+            "auteur": "Marus", 
+            "texte": "belle trouvaille" 
+        }, 
+        
+        { "auteur": "Roger",
+          "texte": "un documentaire pertinent" 
+        } 
+    ]
 }
 ,
 {
@@ -47,6 +91,17 @@ const donnees = [
     "acteurs": ["Marcel Sabourin", "Monique Mercure", "Philippe Léotard", "Clermont Jolicoeur"],
     "genre": "Drame",
     "image": "ja-martin-photographe.jpg"
+     
+    [ 
+        { 
+            "auteur": "Marc-Alexandre", 
+            "texte": "J'ai vu ce film à l'ecole" 
+        }, 
+        
+        { "auteur": "Xavier-Emmnauel",
+          "texte": "ce film est un classique" 
+        } 
+    ]
 }
 ,
 {
@@ -57,6 +112,17 @@ const donnees = [
     "acteurs": ["Jacques Gagnon", "Lyne Champagne", "Jean Duceppe", "Olivette Thibault"],
     "genre": "Drame",
     "image": "mon-oncle-antoine.jpg"
+     
+    [ 
+        { 
+            "auteur": "Willam-Christophe", 
+            "texte": "Je n'ai pas detesté mon oncle Antoine" 
+        }, 
+        
+        { "auteur": "Fabien-Hugo",
+          "texte": "extraordinaire" 
+        } 
+    ]
 }
 ,
 {
@@ -67,6 +133,18 @@ const donnees = [
     "acteurs": ["Micheline Lanctôt", "Donald Pilon", "Marcel Sabourin", "Willie Lamothe"],
     "genre": "Comédie",
     "image": "la-vraie-nature-de-bernadette.jpg"
+     
+    [ 
+        { 
+            "auteur": "Piam-Yann", 
+            "texte": "Une expérience cinématographique époustouflante, mêlant intrigue, émotion et action de manière magistrale." 
+
+        }, 
+        
+        { "auteur": "Théophile",
+          "texte": "Un voyage cinématographique inoubliable qui laisse une empreinte durable dans l'esprit et le cœur de ceux qui le regardent."
+        } 
+    ]
 }
 ,
 {
@@ -77,6 +155,17 @@ const donnees = [
     "acteurs": ["Documentaire"],
     "genre": "Documentaire",
     "image": "24-heures-ou-plus.jpg"
+     
+    [ 
+        { 
+            "auteur": "Emiline", 
+            "texte": "J'ai aimé" 
+        }, 
+        
+        { "auteur": "Gilles",
+          "texte": "Merci" 
+        } 
+    ]
 }
 ,
 {
@@ -87,6 +176,17 @@ const donnees = [
     "acteurs": ["Carole Laure", "Daniel Pilon", "Willie Lamothe", "René Caron"],
     "genre": "Drame",
     "image": "la-mort-dun-bucheron.jpg"
+     
+    [ 
+        { 
+            "auteur": "Janisse", 
+            "texte": "Une exploration profonde des thèmes universels tels que l'amour, la trahison et le courage, qui résonne avec chaque spectateur." 
+        }, 
+        
+        { "auteur": "Mohamed",
+          "texte": "pas compris" 
+        } 
+    ]
 }
 ,
 {
@@ -97,6 +197,17 @@ const donnees = [
     "acteurs": ["Donald Pilon", "Carole Laure", "Danielle Ouimet", "Claude Jutra"],
     "genre": "Drame",
     "image": "les-corps-celestes.jpg"
+     
+    [ 
+        { 
+            "auteur": "Claudine", 
+            "texte": "c'est trop" 
+        }, 
+        
+        { "auteur": "Alexandre",
+          "texte": "c'est pas trop" 
+        } 
+    ]
 }
 ,
 {
@@ -107,6 +218,17 @@ const donnees = [
     "acteurs": ["Vincent Bilodeau", "Claude Blanchard", "Luce Guilbeault", "Pierre Curzi"],
     "genre": "Drame",
     "image": "rejeanne-padovani.jpg"
+     
+    [ 
+        { 
+            "auteur": "Gaetan-Gabriel", 
+            "texte": "le cinéma d'horreur." 
+        }, 
+        
+        { "auteur": "Tanianne",
+          "texte": "Oui, c'est vrai." 
+        } 
+    ]
 }
 ,
 {
@@ -117,6 +239,17 @@ const donnees = [
     "acteurs": ["Drame"],
     "genre": "Drame",
     "image": "tendresse-ordinaire.jpg"
+     
+    [ 
+        { 
+            "auteur": "Illya", 
+            "texte": "J'en reviens pas encore de film." 
+        }, 
+        
+        { "auteur": "Nathan",
+          "texte": "J'en fait encore des cauchemars." 
+        } 
+    ]
 }
 ,
 {
@@ -127,6 +260,18 @@ const donnees = [
     "acteurs": ["Hélène Loiselle", "Jean Lapointe", "Guy Provost", "Claude Gauthier"],
     "genre": "Drame",
     "image": "les-ordres.jpg"
+     
+    [ 
+        { 
+            "auteur": "Charles", 
+            "texte": "Une expérience cinématographique époustouflante, mêlant intrigue, émotion et action de manière magistrale." 
+        }, 
+        
+        { "auteur": "Guyline",
+          "texte":  "Une histoire captivante portée par des performances d'acteurs remarquables, qui vous transporte au cœur de l'action." 
+ 
+        } 
+    ]
 }
 ,
 {
@@ -137,6 +282,17 @@ const donnees = [
     "acteurs": ["Céline Lomez", "Claude Blanchard", "Frédérique Collin", "Pierre Curzi"],
     "genre": "Drame",
     "image": "gina.jpg"
+     
+    [ 
+        { 
+            "auteur": "Beurre", 
+            "texte": "weird" 
+        }, 
+        
+        { "auteur": "Miel",
+          "texte": "J'en fait encore des cauchemars." 
+        } 
+    ]
 }
 ,
 {
@@ -147,6 +303,18 @@ const donnees = [
     "acteurs": ["Réjean Guénette", "Anne-Marie Provencher", "Jean Duceppe", "Janine Fluet", "Claude Michaud", "Gilles Pelletier", "Manda Parent"],
     "genre": "Drame",
     "image": "bingo.jpg"
+     
+    [ 
+        { 
+            "auteur": "Corine", 
+            "texte": "Un scénario brillamment écrit qui vous tient en haleine jusqu'à la dernière scène, avec des twists inattendus à chaque tournant." 
+        }, 
+        { 
+            "auteur": "Miguel",
+            "texte": "Une mise en scène impeccable qui capture l'essence même de l'histoire, offrant des images à couper le souffle à chaque instant." 
+        } 
+    ]
+    
 }
 ,
 {
@@ -157,6 +325,17 @@ const donnees = [
     "acteurs": ["Marc Legault", "Dorothée Berryman", "Gilbert Chénier"],
     "genre": "Crime, Drame",
     "image": "la-gammick.jpg"
+     
+    [ 
+        { 
+            "auteur": "Sophisme", 
+            "texte": "Une adaptation d'un roman."
+        },
+        
+        { "auteur": "Josée",
+          "texte": "Beau mais pas parfait."
+        } 
+    ]
 }
 ,
 {
@@ -167,6 +346,17 @@ const donnees = [
     "acteurs": ["Carole Laure", "Raymond Cloutier", "Reynald Bouchard", "Renée Girard", "Anne-Marie Ducharme"],
     "genre": "Drame",
     "image": "la-tete-de-normande-st-onge.jpg"
+     
+    [ 
+        { 
+            "auteur": "Simon", 
+            "texte": "C'est plutôtomment une adaptation d'un roman." 
+        }, 
+        
+        { "auteur": "Maxime",
+          "texte": " Ah mais quelle merde !" 
+        } 
+    ]
 }
 ,
 {
@@ -177,6 +367,17 @@ const donnees = [
     "acteurs": ["Jacques Boulanger", "Benoît Girard", "Claude Michaud", "Anne Létourneau", "Nicole Cloutier", "Véronique Béliveau", "Rita Lafontaine", "Françoise Berd", "Amulette Garneau", "Monique Mercure", "Manda Parent", "Pierre Curzi", "Jacques DesBaillets", "Jacques Famery", "Muriel Dutil", "Diane Guérin", "Yvon Barrette", "Michelle Rossignol", "Gabriel Arcand", "Guy L'Écuyer"],
     "genre": ["Drame", "Comédie", "Satire"],
     "image": "parlez-nous-damour.jpg"
+     
+    [ 
+        { 
+            "auteur": "françois", 
+            "texte": "un film précurseur." 
+        }, 
+        
+        { "auteur": "louis",
+          "texte": "hilarant !" 
+        } 
+    ]
 }
 ,
 {
@@ -187,6 +388,18 @@ const donnees = [
     "acteurs": ["Marcel Sabourin", "Jean Lapointe", "Rita Lafontaine", "Anne-Marie Ducharme", "Raymond Lévesque", "Denise Proulx", "Guy L'Écuyer"],
     "genre": "Comédie",
     "image": "ti-mine-bernie-pis-la-gang.jpg"
+
+     
+    [ 
+        { 
+            "auteur": "Marcel", 
+            "texte": "une belle histoire." 
+        }, 
+        
+        { "auteur": "Ian",
+          "texte": "tres drole" 
+        } 
+    ]
 }
 ,
 {
@@ -197,6 +410,17 @@ const donnees = [
     "acteurs": ["Louise Portal", "Gaston Lepage", "Raymond Cloutier", "Gilbert Sicotte", "James Blendick", "Pierre Gobeil", "Marcel Sabourin", "Rolland Bédard", "Claude Gauthier", "Jean-Pierre Masson", "Lionel Villeneuve", "Olivette Thibault", "Jean Duceppe", "Jean Gascon", "Gratien Gélinas", "Doris Lussier", "Gilles Vigneault", "Michelle Rossignol"],
     "genre": "Drame",
     "image": "cordelia.jpg"
+     
+    [ 
+        { 
+            "auteur": "laurent", 
+            "texte": "ouin" 
+        }, 
+        
+        { "auteur": "sylvain",
+          "texte": "simplement un excellent film !" 
+        } 
+    ]
 }
 ,
 {
@@ -207,6 +431,17 @@ const donnees = [
     "acteurs": ["Louise Marleau", "Françoise Faucher", "Michel Mondie"],
     "genre": "Drame",
     "image": "larrache-coeur.jpg"
+     
+    [ 
+        { 
+            "auteur": "Quentin", 
+            "texte": "quand tout le monde est d'accord !" 
+        }, 
+        
+        { "auteur": "Zénon",
+          "texte": "jaime" 
+        } 
+    ]
 }
 ,
 {
@@ -217,39 +452,21 @@ const donnees = [
     "acteurs": ["Charlotte Laurier", "Marie Tifo", "Germain Houde", "Louise Marleau", "Roger Lebel", "Gilbert Sicotte", "Serge Thériault", "Jean Pierre Bergeron"],
     "genre": "Drame",
     "image": "les-bons-debarras.jpg"
-}
-,
-{
-    "titre": "Alien - Le 8ème passager",
-    "genres": ["Horreur", "Science-fiction"],
-    "description": "",
-    
-    "annee": "1979",
-    "realisation": "Ridley Scott",
-    "titreVignette": "alienle8emepassager.jpg",
-    "commentaires": 
-    
+     
     [ 
         { 
             "auteur": "Simon", 
-            "texte": "Un classique du cinéma d'horreur." 
+            "texte": "le meilleur film québ" 
         }, 
         
-        { "auteur": "Maxime",
-          "texte": "J'en fait encore des cauchemars." 
+        { "auteur": "Daniel-robert",
+          "texte": "belle perfomance de charlotte Laurier" 
         } 
     ]
-    },
-   
+}
 
-
-
-
-
-
-
-    
+  
   
 ];
 
-module.exports = donnees;
+module.exports = films;

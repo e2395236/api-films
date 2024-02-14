@@ -1,7 +1,7 @@
 {
   "name": "api-films",
   "version": "1.0.0",
-  "description": "Une application de données de films",
+  "description": "Une application de données de films Québécois",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
