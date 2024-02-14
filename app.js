@@ -59,6 +59,39 @@ server.get("/api/films", async (req, res) => {
  */
 
 
+//Initialisation de la base de données des films
+server.post("/api/initialiser", (req, res) => {
+    const donneesTest = require("./data/films.js");
+
+    donneesTest.forEach(async (element) => {
+        await db.collection("Films").add(element);
+    });
+
+    res.statusCode = 200;
+
+    res.json({
+        message: "Données (films) initialisées",
+    });
+});
+
+
+//initialisation de la base de données des utilisateurs
+server.post("/api/initialiser", (req, res) => {
+    const donneesTest = require("./data/utilisateurs.js");
+
+    donneesTest.forEach(async (element) => {
+        await db.collection("Films").add(element);
+    });
+
+    res.statusCode = 200;
+
+    res.json({
+        message: "Données (utilisateurs) initialisées",
+    });
+});
+
+
+
 //Recuperer un seul film
 server.get("/api/film/:id", async (req, res) => {
 
@@ -81,10 +114,13 @@ server.get("/api/film/:id", async (req, res) => {
 });
 
 
+
 //Ajouter un nouveau film
 server.post("/api/films", async (req, res) => {
     try {
         const nouveauFilm = req.body;
+
+        //Validation ici
        
         await db.collection("Films").add(nouveauFilm);
         res.statusCode = 200;
@@ -98,23 +134,8 @@ server.post("/api/films", async (req, res) => {
 });
 
 
-server.post("/api/initialiser", (req, res) => {
-    const donneesTest = require("./data/donnees.js");
 
-    donneesTest.forEach(async (element) => {
-        await db.collection("Films").add(element);
-    });
-
-    res.statusCode = 200;
-
-    res.json({
-        message: "Données initialisées",
-    });
-});
-
-
-
-//mMdifier un film spécifique
+//Mdifier un film spécifique
 server.put("/api/film/:id", async (req, res) => {
     const id = req.params.id;
     const donneesModifiees = req.body;
@@ -125,6 +146,7 @@ server.put("/api/film/:id", async (req, res) => {
     res.statusCode = 200;
     res.json({ message: "La donnée a été modifiée" });
 });
+
 
 
 //Supprimer un film spécifique
@@ -140,9 +162,8 @@ server.delete("/api/film/:id", async (req, res) => {
 
 
 
-
 server.post(
-    "/utilisateurs/inscription",
+    "/api/utilisateurs/inscription",
     [
         check("courriel").escape().trim().notEmpty().isEmail().normalizeEmail(),
         check("mdp").escape().trim().notEmpty().isLength({ min: 8, max: 20 }).isStrongPassword({
@@ -198,7 +219,7 @@ server.post(
     }
 );
 
-server.post("/utilisateurs/connexion", async (req, res) => {
+server.post("/api/utilisateurs/connexion", async (req, res) => {
     // On récupère les infos du body
     const { mdp, courriel } = req.body;
 
@@ -229,9 +250,12 @@ server.post("/utilisateurs/connexion", async (req, res) => {
     res.status = 200;
     res.json(utilisateurAValider);
 });
+
+
+
+
 // DOIT Être la dernière!!
 // Gestion page 404 - requête non trouvée
-
 server.use((req, res) => {
     res.statusCode = 404;
     res.render("404", { url: req.url });
