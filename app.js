@@ -25,7 +25,9 @@ server.use(express.static(path.join(__dirname, "public")));
 server.use(express.json());
 
 // Points d'accès
-server.get("/donnees", async (req, res) => {
+
+//Recuperer tous les films
+server.get("/api/films", async (req, res) => {
     try {
         console.log(req.headers.authorization);
      
@@ -33,8 +35,6 @@ server.get("/donnees", async (req, res) => {
         const direction = req.query["order-direction"] || "asc";
         const limit = +req.query["limit"] || 500; //Mettre une valeur par défaut
 
-      
-    
         const donneesRef = await db.collection("Films").orderBy("année", direction).limit(limit).get();
         const donneesFinale = [];
 
@@ -59,7 +59,8 @@ server.get("/donnees", async (req, res) => {
  */
 
 
-server.get("/donnees/:id", async (req, res) => {
+//Recuperer un seul film
+server.get("/api/film/:id", async (req, res) => {
 
     try {
         const id = req.params.id;
@@ -81,12 +82,12 @@ server.get("/donnees/:id", async (req, res) => {
 
 
 //Ajouter un nouveau film
-server.post("/donnees", async (req, res) => {
+server.post("/api/films", async (req, res) => {
     try {
         const nouveauFilm = req.body;
        
         await db.collection("Films").add(nouveauFilm);
-        res.statusCode = 201;
+        res.statusCode = 200;
         res.json({ message: "Le film a été ajouté", film: nouveauFilm });
     } catch (error) {
         res.statusCode = 500;
@@ -97,32 +98,7 @@ server.post("/donnees", async (req, res) => {
 });
 
 
-
-
-   
-
-
-//server.post("/donnees", async (req, res) => {
-   // try {
-      //  const test = req.body;
-
-        //Validation des données
-       // if (test.user == undefined) {
-       //     res.statusCode = 400;
-      //      return res.json({ message: "Vous devez fournir un utilisateur" });
-      //  }
-
-    //    await db.collection("").add(test);
-
-      //  res.statusCode = 201;
-      //  res.json({ message: "La donnée a été ajoutée", donnees: test });
-   // } catch (error) {
-    //    res.statusCode = 500;
-   //     res.json({ message: "erreur" });
-   // }
-//});
-
-server.post("/donnees/initialiser", (req, res) => {
+server.post("/api/initialiser", (req, res) => {
     const donneesTest = require("./data/donnees.js");
 
     donneesTest.forEach(async (element) => {
@@ -136,7 +112,10 @@ server.post("/donnees/initialiser", (req, res) => {
     });
 });
 
-server.put("/donnees/:id", async (req, res) => {
+
+
+//mMdifier un film spécifique
+server.put("/api/film/:id", async (req, res) => {
     const id = req.params.id;
     const donneesModifiees = req.body;
     //Validation ici
@@ -148,8 +127,8 @@ server.put("/donnees/:id", async (req, res) => {
 });
 
 
-
-server.delete("/donnees/:id", async (req, res) => {
+//Supprimer un film spécifique
+server.delete("/api/film/:id", async (req, res) => {
     const id = req.params.id;
 
     const resultat = await db.collection("Films").doc(id).delete();
@@ -157,6 +136,10 @@ server.delete("/donnees/:id", async (req, res) => {
     res.statusCode = 200;
     res.json({ message: "Le film a été supprimé" });
 });
+
+
+
+
 
 server.post(
     "/utilisateurs/inscription",
