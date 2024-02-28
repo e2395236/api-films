@@ -27,7 +27,7 @@ server.use(express.json());
 // Points d'accès
 
 //Recuperer tous les films
-server.get("/api/films", async (req, res) => {
+server.get("/films", async (req, res) => {
   try {
     console.log(req.headers.authorization);
 
