@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const fs = require("fs");
 const path = require("path");
 const mustacheExpress = require("mustache-express");
+const cors = require("cors");
 const bcrypt = require("bcrypt");
 const db = require("./config/db.js");
 const { check, validationResult } = require("express-validator");
@@ -23,6 +24,8 @@ server.use(express.static(path.join(__dirname, "public")));
 
 //Permet d'accepter des body en Json dans les requêtes
 server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
+server.use(cors());
 
 // Points d'accès
 
@@ -43,8 +46,19 @@ server.get("/api/films", async (req, res) => {
     const donneesFinale = [];
 
     donneesRef.forEach((doc) => {
-      donneesFinale.push(doc.data());
+      const filmsAjouter = doc.data();
+      filmsAjouter.id = doc.id;
+
+      donneesFinale.push(filmsAjouter);
+   
     });
+
+    if (donneesFinale.length === 0) {
+      res.statusCode = 404;
+      return res.json({ message: "Aucun film n'a été trouvé" });
+    }
+
+ 
 
     res.statusCode = 200;
     res.json(donneesFinale);
