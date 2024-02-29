@@ -8,6 +8,14 @@ const bcrypt = require("bcrypt");
 const db = require("./config/db.js");
 const { check, validationResult } = require("express-validator");
 const films = './data/films.js';
+const {Firestore} = require('@google-cloud/firestore');
+
+const firestore = new Firestore({
+  projectId: 'ton-projet-id',
+  ignoreUndefinedProperties: true, // Ajoute cette ligne
+});
+
+const app = express();
 
 //Configurations
 dotenv.config();
