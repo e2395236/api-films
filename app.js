@@ -7,6 +7,7 @@ const cors = require("cors");
 const bcrypt = require("bcrypt");
 const db = require("./config/db.js");
 const { check, validationResult } = require("express-validator");
+const films = './data/films.js';
 
 //Configurations
 dotenv.config();
@@ -40,7 +41,7 @@ server.get("/api/films", async (req, res) => {
 
     const donneesRef = await db
       .collection("Films")
-      .orderBy("année", direction)
+      .orderBy("annee", direction)
       .limit(limit)
       .get();
     const donneesFinale = [];
@@ -76,10 +77,13 @@ server.get("/api/films", async (req, res) => {
  */
 
 //Initialisation de la base de données des films
-server.post("/api/initialiser", (req, res) => {
-  const donneesTest = require("./data/films.js");
+server.post("/api/initialiser-films", (req, res) => {
 
-  donneesTest.forEach(async (element) => {
+  const films = require("./data/films.js");
+
+  
+
+  films.forEach(async (element) => {
     await db.collection("Films").add(element);
   });
 
@@ -91,7 +95,7 @@ server.post("/api/initialiser", (req, res) => {
 });
 
 //initialisation de la base de données des utilisateurs
-server.post("/api/initialiser", (req, res) => {
+server.post("/api/initialiser-utilisateurs", (req, res) => {
   const donneesTest = require("./data/utilisateurs.js");
 
   donneesTest.forEach(async (element) => {
