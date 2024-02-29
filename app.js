@@ -34,7 +34,10 @@ server.use(express.static(path.join(__dirname, "public")));
 //Permet d'accepter des body en Json dans les requêtes
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
-server.use(cors());
+server.use(cors({
+  origin: 'https://api-films-dxmx.onrender.com/api/films'
+}));
+
 
 // Points d'accès
 
